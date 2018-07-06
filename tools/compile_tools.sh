@@ -18,13 +18,15 @@ install_magphase=true
 if [ "$install_sptk" = true ]; then
     echo "downloading SPTK-3.9..."
     sptk_url=http://downloads.sourceforge.net/sp-tk/SPTK-3.9.tar.gz
-    if hash curl 2>/dev/null; then
-        curl -L -O $sptk_url
-    elif hash wget 2>/dev/null; then
-        wget $sptk_url
-    else
-        echo "please download the SPTK-3.9 from $sptk_url"
-        exit 1
+    if [ ! -f SPTK-3.9.tar.gz ]; then
+        if hash curl 2>/dev/null; then
+            curl -L -O $sptk_url
+        elif hash wget 2>/dev/null; then
+            wget $sptk_url
+        else
+            echo "please download the SPTK-3.9 from $sptk_url"
+            exit 1
+        fi
     fi
     tar xzf SPTK-3.9.tar.gz
 
@@ -49,7 +51,7 @@ if [ "$install_sptk" = true ]; then
             exit 1
         fi
         tar xzf postfilter.tar.gz
-        
+
         echo "compiling postfilter..."
         (
             cd postfilter/src;

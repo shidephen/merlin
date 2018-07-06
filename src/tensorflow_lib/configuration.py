@@ -37,7 +37,11 @@
 #  THIS SOFTWARE.
 ################################################################################
 
-import ConfigParser
+import sys
+if sys.version_info.major >= 3:
+    import configparser
+else:
+    import ConfigParser as configparser
 import logging
 import os
 import sys
