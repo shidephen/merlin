@@ -18,6 +18,6 @@ duration_conf_file=$1
 ### Step 3: train duration model ###
 echo "Step 3:"
 echo "training duration model..."
-./scripts/submit.sh ${MerlinDir}/src/run_keras_with_merlin_io.py $duration_conf_file
+./scripts/submit.sh ${MerlinDir}/src/run_merlin.py $duration_conf_file
 
 
