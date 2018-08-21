@@ -212,12 +212,12 @@ start_time = time.time()
 wav_files = get_wav_filelist(wav_dir)
 
 # do multi-processing
-pool = mp.Pool(mp.cpu_count())
-pool.map(process, wav_files)
+#pool = mp.Pool(mp.cpu_count())
+#pool.map(process, wav_files)
 
 # DEBUG:
-#for nxf in xrange(len(wav_files)):
-#    process(wav_files[nxf])
+for nxf in range(len(wav_files)):
+    process(wav_files[nxf])
 
 # clean temporal files
 shutil.rmtree(sp_dir, ignore_errors=True)
@@ -227,7 +227,7 @@ shutil.rmtree(f0_dir, ignore_errors=True)
 for zippath in glob.iglob(os.path.join(bap_dir, '*.bapd')):
     os.remove(zippath)
 
-print("You should have your features ready in: "+out_dir)    
+print("You should have your features ready in: "+out_dir)
 
 (m, s) = divmod(int(time.time() - start_time), 60)
 print(("--- Feature extraction completion time: %d min. %d sec ---" % (m, s)))
