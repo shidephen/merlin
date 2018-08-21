@@ -79,9 +79,9 @@ if [[ ! -d ${data_dir} ]] || [[ -n "$do_unzip" ]]; then
     rm -fr ${duration_dir}/data
     rm -fr ${acoustic_dir}/data
     unzip -q ${data_dir}.zip
-    mv ${data_dir}/merlin_baseline_practice/duration_data/ ${duration_dir}/data
-    mv ${data_dir}/merlin_baseline_practice/acoustic_data/ ${acoustic_dir}/data
-    mv ${data_dir}/merlin_baseline_practice/test_data/ ${synthesis_dir}
+    cp -r ${data_dir}/merlin_baseline_practice/duration_data/ ${duration_dir}/data
+    cp -r ${data_dir}/merlin_baseline_practice/acoustic_data/ ${acoustic_dir}/data
+    cp -r ${data_dir}/merlin_baseline_practice/test_data/ ${synthesis_dir}
 fi
 echo "data is ready!"
 
