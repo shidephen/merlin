@@ -69,9 +69,9 @@ echo "######### No. of files ###############" >> $global_config_file
 echo "######################################" >> $global_config_file
 echo "" >> $global_config_file
 
-echo "Train=50" >> $global_config_file 
-echo "Valid=5" >> $global_config_file 
-echo "Test=5" >> $global_config_file 
+echo "Train=50" >> $global_config_file
+echo "Valid=5" >> $global_config_file
+echo "Test=5" >> $global_config_file
 echo "" >> $global_config_file
 
 echo "######################################" >> $global_config_file
@@ -83,7 +83,7 @@ echo "ESTDIR=${merlin_dir}/tools/speech_tools" >> $global_config_file
 echo "FESTDIR=${merlin_dir}/tools/festival" >> $global_config_file
 echo "FESTVOXDIR=${merlin_dir}/tools/festvox" >> $global_config_file
 echo "" >> $global_config_file
-echo "HTKDIR=${merlin_dir}/tools/bin/htk" >> $global_config_file
+echo "HTKDIR=${HOME}/opt/htk" >> $global_config_file
 echo "" >> $global_config_file
 
 echo "Step 1:"

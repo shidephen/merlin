@@ -1268,7 +1268,7 @@ if __name__ == '__main__':
                 logger.info('      '+p)
     logger.info('  Numpy version: '+numpy.version.version)
     logger.info('  Theano version: '+theano.version.version)
-    logger.info('    THEANO_FLAGS: '+os.getenv('THEANO_FLAGS'))
+    #logger.info('    THEANO_FLAGS: '+os.getenv('THEANO_FLAGS'))
     logger.info('    device: '+theano.config.device)
 
     # Check for the presence of git
